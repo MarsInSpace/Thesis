@@ -1,0 +1,157 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{amssymb,amsmath}
+\usepackage{epsfig}
+\usepackage{multirow}
+
+\usepackage{amssymb}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage{graphicx,calc}
+\graphicspath{ {./figures/} }
+\usepackage{caption2}
+\usepackage{setspace}
+\usepackage{style/ps-macros}
+\usepackage{paralist}
+\usepackage{rotating}
+\usepackage{apacite}
+\usepackage[strings]{underscore}
+\usepackage[headheight=60pt,tmargin=65pt,headsep=10pt]{geometry}
+\usepackage{fancyhdr}
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+\usepackage{overpic}
+\usepackage{xcolor}
+
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\par\singlespacing\small}
+
+\usepackage{afterpage}
+\newcommand\blankpage{
+    \null
+    \thispagestyle{empty}
+    \addtocounter{page}{-1}
+    \newpage
+    }
+
+\let\chaptername\relax
+
+\setcounter{secnumdepth}{3}    % n - number of sectioning levels
+\setcounter{tocdepth}{3}       % up until which sectioning level will be shown in the summary
+\setlength{\parskip}{1\baselineskip}
+
+\begin{document}
+
+\input{parts/Front}
+
+\input{parts/TitlePage}
+\afterpage{\blankpage}
+
+\input{parts/Abstract}
+\pagenumbering{arabic}
+
+\fancyfoot[C]{
+    \raisebox{-0.5ex-\height}{%
+    \begin{overpic}{figures/Footer}
+        \put(48,40){\color{white}\thepage}
+    \end{overpic}}}
+
+\pagestyle{fancy}
+
+\fancypagestyle{plain}{%
+    \fancyheadoffset[R]{3.3cm}
+    \fancyfoot[C]{
+        \raisebox{-0.5ex-\height}{%
+        \begin{overpic}{figures/Footer}
+            \put(48,40){\color{white}\thepage}
+        \end{overpic}}}
+
+    \fancyhead[R]{
+        \setlength{\voffset}{-5cm}
+        \includegraphics{figures/Header}
+    }
+}
+
+\tableofcontents
+\listoffigures
+\newpage
+
+\chapter{Introduction}
+\input{parts/00-Introduction}
+\newpage
+
+\section{Methodology}
+\input{parts/01-Methodology}
+
+
+\chapter{State of the Art}
+\input{parts/02-StateOfTheArt}
+
+\section{The bad reputation of Educational Games}
+\input{parts/03-BadRepEduGames}
+
+\section{Current Educational Games \& Gamification used in Skill Acquisition Contexts}
+\input{parts/05-CurrentEduGames}
+
+
+\chapter{The Basics of Gamification}
+
+\section{The Benefits of Gamified Learning}
+\input{parts/06-Benefits}
+\newpage
+\section{Game-Based Learning and Gamification}
+\input{parts/07-GBLvsGamification}
+\newpage
+\section{Intrinsic and Extrinsic Motivation}
+\input{parts/08-IntrinsicVsExtrinsic}
+
+\section{The Flow-theory}
+\input{parts/09-Flow}
+
+
+\chapter{Gaming Techniques for Effective Learning}
+
+\section{Elements of Learning}
+\input{parts/10-ElementsOfLearning}
+
+\section{Design Elements}
+\input{parts/11-DesignElements}
+
+\subsection{Negative Use of Game Elements in Gamification}
+\input{parts/12-Negative}
+
+\section{Reward Systems}
+\input{parts/13-RewardSystems}
+
+\section{Aspects to watch out for in Development}
+\input{parts/14-DevWatchOut}
+
+
+\chapter{Conclusion - Do's and Don'ts of Gamified Elements in Personal Learning}
+\input{parts/15-Conclusion}
+
+\newpage
+\input{parts/Poster}
+
+\chapter{Outlook \& Future Work}
+\input{parts/16-Outlook}
+
+\newpage
+\bibliographystyle{apacite}
+\bibliography{main}
+
+\newpage
+\input{parts/Authenticity}
+
+\newpage
+\input{parts/LogoPage}
+
+\input{parts/Back}
+
+\end{document}
