@@ -24,6 +24,5 @@
 *.vrb
 *.maf
 *.mtc
-*.pdf
 .DS_Store
 logs/
